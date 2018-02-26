@@ -14,8 +14,9 @@ class MP3Importer
   end
 
   def import
-    # binding.pry
-  self.files.each {|filename| Song.new_by_filename(filename)}
+    self.files.each do |file|
+      song = Song.new_by_filename(file)
+      Artist.all << song.artist umless Artist.all.include?(song.artist)
   end
 
 end
