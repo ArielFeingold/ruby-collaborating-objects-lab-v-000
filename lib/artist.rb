@@ -30,4 +30,6 @@ class Artist
     self.all.detect {|artist| artist.name == name} || Artist.new(name)
   end
 
+  def print_songs
+    songs.each {|song| puts "#{song}"}
 end
