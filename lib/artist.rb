@@ -27,7 +27,7 @@ class Artist
   end
 
   def self.find_or_create_by_name(name)
-    Artist.new(name)
+    @@all.include?(name) ? self : Artist.new(name)
   end
 
 
